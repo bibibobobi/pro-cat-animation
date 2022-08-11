@@ -30,7 +30,8 @@ body {
   display: flex;
   justify-content: center;
 }
-#bgVideo {
+#bgVideo,
+#mbVideo {
   flex: 1;
   background-color: #000;
   opacity: 1;
@@ -78,4 +79,26 @@ body {
 
 .empty {
   background: none;
+}
+
+/* Vidoo source  */
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    width: 100%;
+    height: 100vh;
+    display: block;
+  }
+
+  .step > div {
+    font-size: 18px;
+    padding-left: 100px;
+  }
 }
