@@ -46,9 +46,22 @@ sections.forEach((step, i) => {
     }
   );
 });
-// gsap.to('#bgVideo', {
-//   scrollTrigger: {
-//     scrub: true,
-//   },
-//   scale: 1.5,
-// });
+gsap.to('#bgVideo', {
+  scrollTrigger: {
+    scrub: true,
+  },
+  scale: 1.5,
+});
+
+// Dealing with devices
+function isTouchDevice() {
+  return (
+    'ontouchstart' in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0
+  );
+}
+if (isTouchDevice()) {
+  mbVideo.play();
+  mbVideo.pause();
+}
